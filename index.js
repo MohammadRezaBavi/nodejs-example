@@ -1,6 +1,7 @@
 const express = require("express");
 var app = express();
 const hbs = require("hbs");
+var port = process.env.PORT || 3000;
 
 app.set('view engine','hbs');
 hbs.registerPartials(__dirname + '/views/partials');
@@ -23,6 +24,6 @@ app.get("/",(req,res) => {
   res.render('index.hbs',{
   });
 });
-app.listen(3000,() => {
-  console.log("Server is Running on port 3000");
+app.listen(port,() => {
+  console.log(`Server is Running on port ${port}`);
 });
